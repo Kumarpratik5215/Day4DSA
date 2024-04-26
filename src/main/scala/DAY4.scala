@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 object DAY4 {
 
   def genParentheses(n: Int): List[String] = {
@@ -25,6 +27,7 @@ object DAY4 {
   }
 
   def isValid(str: String): Boolean = {
+    @tailrec
     def isValidHelper(str: String, balanced: Int): Boolean = {
       if (balanced < 0) false
       else if (str.isEmpty) balanced == 0
